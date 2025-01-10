@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: gcp-cloud-stream-bug
+
+  cloud:
+    gcp:
+      project-id: local
+      pubsub:
+        emulator-host: localhost:${pubsub.emulator.port}
+
+    function:
+      definition: test
+
+    stream:
+
+      bindings:
+        test-in-0:
+          group: ${spring.application.name}
+          destination: test
+          binder: pubsub
+      gcp:
+        pubsub:
+          default:
+            consumer:
+              auto-create-resources: false
+            producer:
+              auto-create-resources: false
+
