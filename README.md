@@ -11,6 +11,6 @@ This project attempts to reproduce an issue when running `spring-cloud-stream` w
 
 To reproduce the error, first make sure the tests pass when using the default `spring-boot-starter-parent` version `3.3.7` by running:
    
-    mvn package
+    mvn test
 
 After upgrading to version `3.4.0` the tests don't pass anymore. The function binding doesn't seem to work anymore.
